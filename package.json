@@ -1,0 +1,33 @@
+{
+  "name": "site-pulse",
+  "version": "1.0.0",
+  "description": "Lightweight uptime and response-time monitor that runs on a GitHub Actions schedule.",
+  "type": "module",
+  "bin": {
+    "site-pulse": "src/cli.js"
+  },
+  "scripts": {
+    "check": "node src/cli.js check",
+    "render": "node src/cli.js render",
+    "test": "node --test --test-reporter=spec",
+    "lint": "eslint .",
+    "screenshot": "node scripts/screenshot.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnriqueMuhammad/site-pulse.git"
+  },
+  "author": "Enrique Muhammad (https://enrique-lab.my.id)",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.8.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "globals": "^16.5.0"
+  }
+}

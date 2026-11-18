@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Uptime and response-time record published by site-pulse.">
+  <meta name="theme-color" content="#e6eef1">
+  <title>Site Pulse</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23e6eef1'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%230d6846'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,560;12..96,680&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { color-scheme: light; }
+    html { scrollbar-color: #b7c8ce #e6eef1; }
+    body {
+      margin: 0;
+      background: #e6eef1;
+      color: #132228;
+      font-family: Outfit, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+    }
+    h1.font-display {
+      font-size: 3.15rem;
+      line-height: 1.02;
+      font-weight: 680;
+    }
+    h2.section-title {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      font-weight: 560;
+    }
+    @media (min-width: 40rem) {
+      h1.font-display { font-size: 3.75rem; }
+    }
+    .font-display { font-family: "Bricolage Grotesque", sans-serif; }
+    .font-mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    ::selection { background: #c5e0d4; color: #132228; }
+    a:focus-visible { outline: 2px solid #132228; outline-offset: 3px; }
+    .dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      background: currentColor;
+      display: inline-block;
+    }
+    .status-up .dot { animation: pulse-dot 2.4s ease-out infinite; }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(13, 104, 70, 0.45); }
+      70% { box-shadow: 0 0 0 8px rgba(13, 104, 70, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(13, 104, 70, 0); }
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (max-width: 700px) {
+      table.ledger thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+      table.ledger tr {
+        display: block;
+        padding: 0.45rem 0 0.85rem;
+        border-bottom: 1px solid #c3d2d8;
+      }
+      table.ledger td {
+        display: block;
+        border-bottom-width: 0;
+        padding-top: 0.55rem;
+        padding-bottom: 0.1rem;
+      }
+      table.ledger td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 0.12rem;
+        color: #3c5158;
+        font-family: Outfit, sans-serif;
+        font-size: 0.8rem;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .status-up .dot { animation: none; }
+    }
+  </style>
+</head>
+<body class="bg-[#e6eef1] text-[#132228] antialiased">
+  <div class="mx-auto max-w-5xl px-6 py-12 sm:py-16">
+    <header class="border-t-[3px] border-[#132228] pt-6">
+      <h1 class="font-display tracking-[-0.03em] text-balance">Site Pulse</h1>
+      <p class="mt-4 max-w-[65ch] text-lg text-[#3c5158]">A record of who answered, and how long they took. The checks run on a schedule. This page is what they leave behind.</p>
+      <p class="mt-6 text-[#3c5158]">3 sites in this record. 3 responding at the last check, 18 Nov 2026, 02:59 UTC.</p>
+    </header>
+    <section class="mt-14">
+      <h2 class="section-title tracking-[-0.02em]">Last check</h2>
+      <p class="mt-3 max-w-[65ch] text-[#3c5158]">Uptime is the share of retained checks that came back with the expected status.</p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="ledger w-full border-collapse text-left">
+          <caption class="sr-only">Status of each configured site</caption>
+          <thead>
+            <tr class="text-sm text-[#3c5158]">
+              <th scope="col" class="border-b border-[#132228] px-3 py-2 font-medium">Site</th>
+              <th scope="col" class="border-b border-[#132228] px-3 py-2 font-medium">Status</th>
+              <th scope="col" class="border-b border-[#132228] px-3 py-2 font-medium">Code</th>
+              <th scope="col" class="border-b border-[#132228] px-3 py-2 font-medium">Latency</th>
+              <th scope="col" class="border-b border-[#132228] px-3 py-2 font-medium">Uptime</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr class="">
+          <td data-label="Site" class="border-b border-[#c3d2d8] px-3 py-4 align-top">
+            <span class="block font-medium">GitHub</span>
+            <a class="mt-1 block break-all text-sm text-[#3c5158] underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://github.com">https://github.com</a>
+          </td>
+          <td data-label="Status" class="border-b border-[#c3d2d8] px-3 py-4 align-top"><span class="status-up inline-flex items-center gap-2 text-[#0d6846]"><span class="dot" aria-hidden="true"></span>Up</span></td>
+          <td data-label="Code" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">200</td>
+          <td data-label="Latency" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">99 ms</td>
+          <td data-label="Uptime" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">100%</td>
+        </tr>
+        <tr class="">
+          <td data-label="Site" class="border-b border-[#c3d2d8] px-3 py-4 align-top">
+            <span class="block font-medium">Google</span>
+            <a class="mt-1 block break-all text-sm text-[#3c5158] underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://www.google.com">https://www.google.com</a>
+          </td>
+          <td data-label="Status" class="border-b border-[#c3d2d8] px-3 py-4 align-top"><span class="status-up inline-flex items-center gap-2 text-[#0d6846]"><span class="dot" aria-hidden="true"></span>Up</span></td>
+          <td data-label="Code" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">200</td>
+          <td data-label="Latency" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">121 ms</td>
+          <td data-label="Uptime" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">100%</td>
+        </tr>
+        <tr class="">
+          <td data-label="Site" class="border-b border-[#c3d2d8] px-3 py-4 align-top">
+            <span class="block font-medium">Enrique Lab</span>
+            <a class="mt-1 block break-all text-sm text-[#3c5158] underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://enrique-lab.my.id">https://enrique-lab.my.id</a>
+          </td>
+          <td data-label="Status" class="border-b border-[#c3d2d8] px-3 py-4 align-top"><span class="status-up inline-flex items-center gap-2 text-[#0d6846]"><span class="dot" aria-hidden="true"></span>Up</span></td>
+          <td data-label="Code" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">200</td>
+          <td data-label="Latency" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">770 ms</td>
+          <td data-label="Uptime" class="border-b border-[#c3d2d8] px-3 py-4 align-top font-mono tabular-nums">100%</td>
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <section class="mt-16">
+      <h2 class="section-title tracking-[-0.02em]">Response time</h2>
+      <p class="mt-3 max-w-[65ch] text-[#3c5158]">Milliseconds from each retained check. A gap in the line means that run had no sample.</p>
+      <div class="mt-6 h-80 border border-[#c3d2d8] bg-[#eef4f6] px-3 py-4 sm:px-5">
+        <canvas id="latency-chart" role="img" aria-label="Response time in milliseconds for each site"></canvas>
+      </div>
+    </section>
+    <footer class="mt-16 border-t border-[#c3d2d8] pt-6 text-sm text-[#3c5158]">
+      <p>Built by <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://enrique-lab.my.id">Enrique Muhammad</a>. Checks are committed from GitHub Actions. <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://github.com/EnriqueMuhammad/site-pulse">Source</a> is MIT.</p>
+    </footer>
+  </div>
+  <script type="application/json" id="pulse-data">{"labels":["18 Nov 02:59:40","18 Nov 02:59:44"],"datasets":[{"label":"GitHub","color":"#1f4d3a","data":[88,99]},{"label":"Google","color":"#9a3412","data":[109,121]},{"label":"Enrique Lab","color":"#1e3a5f","data":[2384,770]}]}</script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script>
+    const payload = JSON.parse(document.getElementById('pulse-data').textContent);
+    const canvas = document.getElementById('latency-chart');
+    if (canvas && payload.datasets.some((set) => set.data.some((value) => value != null))) {
+      const chart = new Chart(canvas, {
+        type: 'line',
+        data: {
+          labels: payload.labels,
+          datasets: payload.datasets.map((set) => ({
+            label: set.label,
+            data: set.data,
+            borderColor: set.color,
+            backgroundColor: set.color,
+            borderWidth: 2,
+            pointRadius: 3,
+            pointHoverRadius: 5,
+            tension: 0.25,
+            spanGaps: false,
+          })),
+        },
+        options: {
+          animation: false,
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#3c5158',
+                boxWidth: 12,
+                boxHeight: 12,
+                font: { family: 'Outfit, sans-serif', size: 13 },
+              },
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: '#3c5158',
+                maxRotation: 0,
+                autoSkip: true,
+                font: { family: 'IBM Plex Mono, monospace', size: 11 },
+              },
+              grid: { color: '#d3e0e4' },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: '#3c5158',
+                callback: (value) => value + ' ms',
+                font: { family: 'IBM Plex Mono, monospace', size: 11 },
+              },
+              grid: { color: '#d3e0e4' },
+            },
+          },
+        },
+      });
+      void chart;
+    }
+  </script>
+</body>
+</html>
