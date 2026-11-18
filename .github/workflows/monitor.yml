@@ -1,0 +1,74 @@
+name: Monitor
+
+# Records uptime on a schedule and publishes the status page.
+# One-time repository settings, after this file is on the default branch:
+#   1. Settings → Actions → General → Workflow permissions → Read and write.
+#   2. Settings → Pages → Build and deployment → Source → GitHub Actions.
+#   3. If main is protected, let github-actions[bot] push, or this job's commit step fails.
+# Scheduled workflows use the default branch. GitHub may delay the cron slot.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+  id-token: write
+  pages: write
+
+concurrency:
+  group: site-pulse-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check sites
+        run: npm run check
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/history.json data/history.csv public
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: record uptime check"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
