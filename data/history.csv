@@ -8,3 +8,6 @@ checkedAt,name,slug,url,expect,status,latencyMs,ok,error
 2026-11-18T03:13:31.331Z,GitHub,github,https://github.com,200,200,102,true,
 2026-11-18T03:13:31.331Z,Google,google,https://www.google.com,200,200,65,true,
 2026-11-18T03:13:31.331Z,Enrique Lab,enrique-lab,https://enrique-lab.my.id,200,200,1705,true,
+2026-11-18T12:06:46.263Z,GitHub,github,https://github.com,200,200,121,true,
+2026-11-18T12:06:46.263Z,Google,google,https://www.google.com,200,200,133,true,
+2026-11-18T12:06:46.263Z,Enrique Lab,enrique-lab,https://enrique-lab.my.id,200,200,2563,true,
