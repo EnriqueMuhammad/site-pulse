@@ -1,0 +1,22 @@
+# How long each request may take before it is recorded as down.
+timeoutMs: 10000
+
+# Check runs to keep. 336 is 7 days of a run every 30 minutes.
+retention: 336
+
+# Linked from the status page footer. Change this after you fork.
+repository: https://github.com/EnriqueMuhammad/site-pulse
+
+# expect is the final HTTP status after redirects. Fetch follows them.
+sites:
+  - name: GitHub
+    url: https://github.com
+    expect: 200
+
+  - name: Google
+    url: https://www.google.com
+    expect: 200
+
+  - name: Enrique Lab
+    url: https://enrique-lab.my.id
+    expect: 200
