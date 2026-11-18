@@ -105,4 +105,4 @@ docs/status-page.png
 
 ## License
 
-MIT. Copyright 2026 [Enrique Muhammad Ilham](https://enrique-lab.my.id).
+MIT. Copyright 2026 [Enrique Muhammad](https://enrique-lab.my.id).

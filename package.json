@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/EnriqueMuhammad/site-pulse.git"
   },
-  "author": "Enrique Muhammad Ilham (https://enrique-lab.my.id)",
+  "author": "Enrique Muhammad (https://enrique-lab.my.id)",
   "license": "MIT",
   "dependencies": {
     "yaml": "^2.8.0"

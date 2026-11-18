@@ -275,7 +275,7 @@ export function renderStatusPage({ config, history }) {
     </section>
     ${chartSection}
     <footer class="mt-16 border-t border-[#c3d2d8] pt-6 text-sm text-[#3c5158]">
-      <p>Built by <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://enrique-lab.my.id">Enrique Muhammad Ilham</a>. Checks are committed from GitHub Actions. <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="${escapeHtml(config.repository)}">Source</a> is MIT.</p>
+      <p>Built by <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="https://enrique-lab.my.id">Enrique Muhammad</a>. Checks are committed from GitHub Actions. <a class="underline decoration-[#9eb4bc] underline-offset-4 hover:decoration-[#132228]" href="${escapeHtml(config.repository)}">Source</a> is MIT.</p>
     </footer>
   </div>
   <script type="application/json" id="pulse-data">${safeJson(chart)}</script>
