@@ -74,3 +74,6 @@ checkedAt,name,slug,url,expect,status,latencyMs,ok,error
 2026-11-25T04:01:19.934Z,GitHub,github,https://github.com,200,200,123,true,
 2026-11-25T04:01:19.934Z,Google,google,https://www.google.com,200,200,86,true,
 2026-11-25T04:01:19.934Z,Enrique Lab,enrique-lab,https://enrique-lab.my.id,200,200,1513,true,
+2026-11-25T14:50:04.648Z,GitHub,github,https://github.com,200,200,195,true,
+2026-11-25T14:50:04.648Z,Google,google,https://www.google.com,200,200,266,true,
+2026-11-25T14:50:04.648Z,Enrique Lab,enrique-lab,https://enrique-lab.my.id,200,200,2605,true,
