@@ -910,6 +910,41 @@
           "error": null
         }
       ]
+    },
+    {
+      "checkedAt": "2026-11-25T23:30:25.299Z",
+      "results": [
+        {
+          "name": "GitHub",
+          "slug": "github",
+          "url": "https://github.com",
+          "expect": 200,
+          "status": 200,
+          "latencyMs": 95,
+          "ok": true,
+          "error": null
+        },
+        {
+          "name": "Google",
+          "slug": "google",
+          "url": "https://www.google.com",
+          "expect": 200,
+          "status": 200,
+          "latencyMs": 64,
+          "ok": true,
+          "error": null
+        },
+        {
+          "name": "Enrique Lab",
+          "slug": "enrique-lab",
+          "url": "https://enrique-lab.my.id",
+          "expect": 200,
+          "status": 200,
+          "latencyMs": 2721,
+          "ok": true,
+          "error": null
+        }
+      ]
     }
   ]
 }
